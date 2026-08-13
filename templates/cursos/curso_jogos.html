@@ -6,40 +6,43 @@
 		<link rel="stylesheet" type="text/css" href="../../static/css/home/body.css">
 		<link rel="stylesheet" type="text/css" href="../../static/css/global/menu.css">
 		<link rel="stylesheet" type="text/css" href="../../static/css/cursos/curso.css">
+		<link rel="stylesheet" type="text/css" href="../../static/css/global/footer.css">
 	</head>
 	<body> 
-		<section>
-		
-			<img src="../../static/imagens/logo/logosenac.png" alt="Logo Senac" title="Senac" id="logosenac">
-			
-			<input type="checkbox" id="bt_menu">
-			<label for="bt_menu">&#9776;</label>
-			<nav id="menu">
-			<ul>
-				<li>
-					<a href="../home/index.html">Início</a>
-					<u>
-				</li>
-				<li>
-					<a href="cursos.html">Cursos</a>
+		<header class="site-header">
+			<div class="header-container">
+				<img src="../../static/imagens/logo/logosenac.png" alt="Logo Senac" title="Senac" id="logosenac">
+
+				<input type="checkbox" id="bt_menu">
+				<label for="bt_menu">&#9776;</label>
+
+				<nav id="menu">
 					<ul>
-						<li><a href="curso_info.html">Informática</a></li>
-						<li><a href="curso_redes.html">Redes de Computadores</a></li>
-						<li><a href="curso_sistemas.html">Desenvolvimento de Sistemas</a></li>
-						<li><a href="curso_admin.html">Administração</a></li>
-						<li><a href="curso_jogos.html">Programação de Jogos Digitais</a></li>						
+						<li>
+							<a href="../home/index.html">Início</a>
+						</li>
+						<li class="dropdown">
+							<a href="cursos.html">Cursos</a>
+							<ul>
+								<li><a href="curso_info.html">Técnico em Informática</a></li>
+								<li><a href="curso_redes.html">Técnico em Redes de Computadores</a></li>
+								<li><a href="curso_sistemas.html">Técnico em Desenvolvimento de Sistemas</a></li>
+								<li><a href="curso_admin.html">Técnico em Administração</a></li>
+								<li><a href="curso_jogos.html">Técnico em Prog. de Jogos Digitais</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="../localizacao/localizacao.html">Localização</a>
+						</li>
 					</ul>
-				</li>	
-				<li>
-					<a href="../localizacao/localizacao.html">Localização</a>												
-				</li>
-				<li>
-					<a href="../cadastro/cadastro.html">Cadastro</a>					
-				</li>
-				
-			</ul>
-		</nav>
-		</section>
+				</nav>
+
+				<div class="header-actions">
+					<a href="#" class="btn btn-entrar">Entrar</a>
+					<a href="../cadastro/cadastro.html" class="btn btn-cadastrar">Cadastrar</a>
+				</div>
+			</div>
+		</header>
 		<hr>
 		<section>
 		<div class="headimage">
@@ -84,10 +87,77 @@
 		</table>
 		<br>
 		<p>
-		<a href="curso_jogos.html">			
+		<a href="curso_jogos.html">
 		<h3>Clique para voltar ao topo</h3>
 		</a></p>
-	
+
+		<footer class="site-footer">
+			<div class="footer-container">
+				<div class="footer-brand">
+					<div class="footer-logo">
+						<img src="../../static/imagens/logo/logosenac.png" alt="Logo Senac" title="Senac" id="footerlogosenac">
+					</div>
+					<p class="footer-tagline">
+						Há mais de 70 anos formando profissionais para o mercado de trabalho. O Senac-RS une tradição e inovação para oferecer educação profissional de qualidade em todo o Rio Grande do Sul.
+					</p>
+					<div class="footer-social">
+						<a href="https://www.instagram.com/senacrs/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram do Senac">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+								<rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+								<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+								<line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+							</svg>
+						</a>
+						<a href="https://www.facebook.com/senacrsoficial/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook do Senac">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+							</svg>
+						</a>
+						<a href="https://www.linkedin.com/school/senac-rs/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn do Senac">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+								<rect x="2" y="9" width="4" height="12"></rect>
+								<circle cx="4" cy="4" r="2"></circle>
+							</svg>
+						</a>
+					</div>
+				</div>
+
+				<div class="footer-col">
+					<h3>Cursos</h3>
+					<ul>
+						<li><a href="curso_info.html">Informática</a></li>
+						<li><a href="curso_redes.html">Redes de Computadores</a></li>
+						<li><a href="curso_sistemas.html">Desenvolvimento de Sistemas</a></li>
+						<li><a href="curso_admin.html">Administração</a></li>
+						<li><a href="curso_jogos.html">Jogos Digitais</a></li>
+					</ul>
+				</div>
+
+				<div class="footer-col">
+					<h3>Institucional</h3>
+					<ul>
+						<li><a href="../home/index.html">Início</a></li>
+						<li><a href="../localizacao/localizacao.html">Localização</a></li>
+						<li><a href="#">Entrar</a></li>
+						<li><a href="../cadastro/cadastro.html">Cadastre-se</a></li>
+					</ul>
+				</div>
+
+				<div class="footer-col">
+					<h3>Contato</h3>
+					<ul>
+						<li><a href="tel:+555132887750">(51) 3288-7750</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="footer-bottom">
+				<p>&copy; 2026 Senac. Todos os direitos reservados.</p>
+				<p>Projeto acadêmico desenvolvido para fins de estudo — não é um site oficial do Senac.</p>
+			</div>
+		</footer>
+
 	</body>
 
 

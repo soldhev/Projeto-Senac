@@ -1,197 +1,282 @@
 * {
+    text-decoration: none;
+}
+
+:root {
+    --senac-blue: #0f3a5c;
+    --senac-blue-dark: #0a2c46;
+    --senac-orange: #db7a29;
+    --senac-orange-dark: #c0651a;
+    --header-text: #1c2b39;
+    --header-border: #e7ebf0;
+}
+
+/* ===== Header base ===== */
+
+.site-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--header-border);
+    box-shadow: 0 2px 10px rgba(15, 42, 70, 0.06);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+#logosenac {
+    flex: 0 0 auto;
+    display: block;
+    height: 46px;
+    width: auto;
+}
+
+/* ===== Navegação central ===== */
+
+#menu {
+    flex: 1 1 auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#menu ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0;
-    padding: 0; 
-    }
-   #logosenac {
-       position: relative;
-       display: block;  
-       margin-right: auto;  
-       margin-left: auto;
-   }
-   #menu {	
-       align-content: center;	
-       background-color:#db7a29;		
-       height: 70px;	
-       font-family: Arial, Helvetica, sans-serif;
-   }
-   #menu ul{
-       list-style: none;
-       position: relative;
-       margin-right: auto;
-       margin-left: auto;
-       margin-top:20px;
-       padding: 20px;
-       smargin: 10px;
-       
-       background-color: #db7a29;	
-   }
-   #headerwrapper {
-       background-color: #FFFFFF;
-   }
-   #menu ul li{
-       padding: 10px;
-       float: left; 
-   }
-   
-   
-   
-   #menu a{
-       
-       
-       
-       display: inline-block;	
-       text-decoration: none;
-       
-       font-weight: 650;
-       color: white;
-       text-align: center;
-       text-transform:uppercase;
-       margin-left:10px;
-       margin-right:10px;
-       align-content: center;
-   
-   }
-   #menu a:hover{
-       background-color: #ffffff;	
-       color: darkblue;
-   }
-   
-   #menu ul ul {
-    position: absolute;
-    visibility: hidden; 
-    transition:0.4s;
-    }
-    
-    #menu ul ul li {
-    float: none;
-    border-bottom: solid 1px #ccc;
-    height:auto;
-    padding: 1px;
-    margin-left: 0px;
-    margin-right:0px;
-    
-    font-size:14px;
-   
-    }
-    
-   #menu ul li:hover ul {
-    visibility: visible;   
-    
-    }
-    
-    label[for="bt_menu"]{
-    padding: 5px;
-    background-color: #db7a29;
-    color: #fff;
-    sfont-family: Arial;
+    padding: 0;
+    gap: 4px;
+}
+
+#menu ul li {
+    position: relative;
+}
+
+#menu a {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--header-text);
     text-align: center;
-    font-size: 30px;
+    text-transform: none;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#menu > ul > li > a:hover,
+#menu > ul > li > a:focus {
+    background-color: #eef2f6;
+    color: var(--senac-blue);
+}
+
+#menu li.dropdown > a::after {
+    content: "\25BE";
+    margin-left: 6px;
+    font-size: 11px;
+    vertical-align: middle;
+}
+
+/* ===== Dropdown "Cursos" ===== */
+
+#menu ul ul {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-6px);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 270px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 16px 32px rgba(15, 42, 70, 0.16);
+    padding: 10px;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+    z-index: 50;
+}
+
+#menu li.dropdown:hover > ul,
+#menu li.dropdown:focus-within > ul {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+#menu ul ul li {
+    border-bottom: none;
+}
+
+#menu ul ul a {
+    display: block;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: none;
+    text-align: left;
+    color: var(--header-text);
+}
+
+#menu ul ul a:hover {
+    background-color: #f3f6fa;
+    color: var(--senac-blue);
+}
+
+/* ===== Botões de ação (Entrar / Cadastrar) ===== */
+
+.header-actions {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
     cursor: pointer;
-    height: 50px;
-    }
-    
-    #bt_menu {
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-entrar {
+    background-color: #ffffff;
+    color: var(--senac-blue);
+    border: 1.5px solid var(--senac-blue);
+}
+
+.btn-entrar:hover {
+    background-color: var(--senac-blue);
+    color: #ffffff;
+}
+
+.btn-cadastrar {
+    background-color: var(--senac-orange);
+    color: #ffffff;
+    border: 1.5px solid var(--senac-orange);
+}
+
+.btn-cadastrar:hover {
+    background-color: var(--senac-orange-dark);
+    border-color: var(--senac-orange-dark);
+}
+
+/* ===== Botão do menu mobile ===== */
+
+#bt_menu {
     display: none;
-    
-    }
-    
-    label[for="bt_menu"]{
+}
+
+label[for="bt_menu"] {
     display: none;
-    
-    
+    align-items: center;
+    justify-content: center;
+    color: var(--senac-blue);
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 4px 6px;
+    margin-left: auto;
+    order: 2;
+}
+
+/* ===== Responsivo ===== */
+
+@media (max-width: 900px) {
+    .header-container {
+        flex-wrap: wrap;
+        padding: 12px 20px;
     }
-    @media(max-width: 700px) {
-       /*colocar esse ponto
-       display: block; define o icone em bloco  */
-     label[for="bt_menu"] {
-       display: flex;
-       justify-content:center;
-    
+
+    #logosenac {
+        order: 1;
     }
+
+    label[for="bt_menu"] {
+        display: flex;
+    }
+
+    #menu,
+    .header-actions {
+        flex: 1 1 100%;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.35s ease, opacity 0.25s ease;
+    }
+
     #menu {
-        visibility:hidden;
+        order: 3;
     }
-    /*colocar esse ponto
-   #bt_menu:checked ~ #menu{
-    margin-left: 0;
-    :checked de um seletor CSS representa um elemento 
-    checkbox (<input type="checkbox">)que está marcada ou 
-    alternado para um estado ligado.
-    Representa todos os checkboxes na página que estão ativos
-    :checkedpseudo-classe no CSS seleciona elementos 
-    quando eles estão no estado selecionado.
-    ~ Ele selecionará, qualquer elemento #menu, 
-    desde que ele venha depois de um elemento #bt_menu.
-   */ 
-   #bt_menu:checked ~ #menu{
-    margin-left: 0;
-    
-    
+
+    .header-actions {
+        order: 4;
     }
-     /*  modificar esse ponto
-     margin-left: -100%; - menu vai sumir da tela
-        transition: all 1s; - define um tempo de 1 segundo para
-        sumir e aparecer o menu
-     */
-       #menu{
-           
-        background-color: #db7a29;
-        margin-left: -100%;
-        stransition: all 1s;
-        visibility:visible;
-        width:50%;
-        display:flex;
-        
-        
-        }
-         /*modificar esse ponto
-         width: 100%; - define largura do menu
-        float: none; - define que o menu não vai bugar o site
-         */
-       #menu ul li {
-        
-        float: none;
-        background-color: #db7a29;
-        }
-         /*modifica esse ponto
-         position: static; - define o sub statico
-        overflow: hidden; - define que o sub não apareça
-        max-height: 0; - define a altura máxima do sub
-        transition: all 4s; - define o tempo de transição do sub
-         */
-       #menu ul ul {
-       position: static;
-       
-       max-height: 0;
-       wdith
-       transition: all 4s;	 	
-       
-       
-       
+
+    #bt_menu:checked ~ #menu,
+    #bt_menu:checked ~ .header-actions {
+        max-height: 600px;
+        opacity: 1;
+        margin-top: 10px;
     }
-    #menu ul li:hover ul {
-        height: auto;
-        max-height: 200px;
-        background-color: #db7a29;
-         
-        }
-        #menu a{
-       
-       
-       
-       display: flex;	
-       text-decoration: none;
-       
-       font-weight: 650;
-       color: white;
-       text-align: center;
-       text-transform:uppercase;
-       overflow:hidden;
-       justify-content: center;
-       }
-   }
-         /*max-height: 200px; - define que o sub vai abrir até 200px  */
-       
-   
-   
-    
+
+    #menu ul {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2px;
+    }
+
+    #menu ul li {
+        width: 100%;
+    }
+
+    #menu a {
+        border-radius: 8px;
+        text-align: left;
+    }
+
+    #menu ul ul {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        box-shadow: none;
+        border-radius: 0;
+        min-width: 0;
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 0 0 14px;
+        transition: max-height 0.3s ease;
+    }
+
+    #menu li.dropdown:hover > ul,
+    #menu li.dropdown:focus-within > ul {
+        max-height: 400px;
+    }
+
+    .header-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}

@@ -14,8 +14,8 @@ p{
 }
 table {
 	text-align: center;
-	sdisplay:flex;
-	sjustify-content:center;
+	display:flex;
+	justify-content:center;
 	width:500px;
 	margin-left:auto; 
     margin-right:auto;
