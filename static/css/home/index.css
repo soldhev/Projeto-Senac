@@ -1,91 +1,379 @@
-#primeiropar h3{	
-	text-align: center;
-	
-}
-#primeiropar p{
-	text-align: justify;
-	
-	width: 500px;
-	margin-left: auto;
-	margin-right: auto;
-}
-#foto1senac {
-	display: block;  
-	margin-right: auto;  
-	margin-left: auto;
-	margin-bottom:15px;
-	margin-top:15px;
-}
-#primeiropar img{
-	width:500px;
-	height:200px;
-	object-fit: cover;
-}
 #logosenac{
 	display:flex;
 	justify-content:center;
 }
 body{
-	background-color:#ffffff;	
-}
-#foto2senac{
-	display: block;  
-	margin-right: auto;  
-	margin-left: auto;
-}
-#pagina {
-	background-color:#ffa500;
+	background-color:#ffffff;
 }
 
-#segundopar img{			
-	width:500px;
-	height:200px;
-	object-fit: cover;
-}
-/*
-.segundopar, img{
-	display:inline-block;
-	height:380px;
-}
-*/
-#pt1 {
-	text-align: justify;
-	
-	width: 500px;
-	margin-left: auto;
-	margin-right: auto;
-}
-#pt2 {
-	text-align: justify;
-	
-	width: 500px;
-	margin-left: auto;
-	margin-right: auto;
-}
-/*
-.segundopar p{
-	text-align: justify;	
+/* Fonte padrão para todas as seções institucionais da página
+   (sem o <article> antigo, precisa ser declarada explicitamente aqui) */
+.sobre-section,
+.estrutura-section,
+.aprendiz-section,
+.psg-section,
+.metodologia-section {
 	font-family: Arial, Helvetica, sans-serif;
 }
-*/
 
+/* =======================================================
+   Seção "Sobre o Senac"
+   Layout: texto + estatísticas à esquerda, foto à direita
+   ======================================================= */
 
-#terceiropar h3{
+.sobre-section {
+	width: 100%;
+	padding: 60px 24px;
+}
+
+/* Container com as duas colunas (texto / foto) lado a lado */
+.sobre-container {
+	max-width: 1100px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	gap: 48px;
+}
+
+/* ===== Coluna de texto ===== */
+
+.sobre-texto {
+	flex: 1 1 480px;
+}
+
+.sobre-titulo {
+	text-align: left;
+	font-size: 28px;
+	color: var(--senac-blue);
+	margin-bottom: 18px;
+}
+
+.sobre-texto p {
+	text-align: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	line-height: 1.7;
+	color: #333333;
+	margin-bottom: 14px;
+}
+
+/* ===== Linha de estatísticas em destaque ===== */
+
+.sobre-stats {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 32px;
+	margin-top: 28px;
+}
+
+.stat-item {
+	display: flex;
+	flex-direction: column;
+}
+
+.stat-numero {
+	font-size: 26px;
+	font-weight: bold;
+	color: var(--senac-orange);
+}
+
+.stat-label {
+	font-size: 13px;
+	color: #555555;
+}
+
+/* ===== Coluna de foto ===== */
+
+.sobre-foto {
+	flex: 1 1 380px;
+	max-width: 460px;
+}
+
+#foto1senac {
+	display: block;
+	width: 100%;
+	height: 320px;
+	object-fit: cover;
+	border-radius: 8px;
+	border: 1px solid #e7ebf0;
+}
+
+.sobre-foto-legenda {
+	text-align: left;
+	margin-top: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: var(--senac-blue);
+	font-weight: 600;
+}
+
+/* ===== Responsivo ===== */
+
+@media (max-width: 700px) {
+	.sobre-container {
+		flex-direction: column;
+	}
+
+	.sobre-titulo {
+		text-align: center;
+	}
+
+	.sobre-stats {
+		justify-content: center;
+		text-align: center;
+	}
+
+	.stat-item {
+		align-items: center;
+	}
+}
+
+/* =======================================================
+   Título usado em todas as seções institucionais abaixo
+   ======================================================= */
+
+.secao-titulo {
 	text-align: center;
-	
+	font-size: 26px;
+	color: var(--senac-blue);
+	margin-bottom: 12px;
 }
-#terceiropar p{
+
+/* Variante alinhada à esquerda, usada nas seções com ícone + texto */
+.secao-titulo--esquerda {
+	text-align: left;
+}
+
+/* ===== Selo/ícone circular reutilizado nas seções abaixo ===== */
+
+.card-icone {
+	width: 56px;
+	height: 56px;
+	flex-shrink: 0;
+	border-radius: 50%;
+	background-color: var(--senac-blue);
+	color: #ffffff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto 14px;
+}
+
+.card-icone svg {
+	width: 26px;
+	height: 26px;
+}
+
+/* Versão maior, usada como destaque ao lado de um bloco de texto */
+.card-icone--grande {
+	width: 72px;
+	height: 72px;
+	margin: 0;
+	background-color: var(--senac-orange);
+}
+
+.card-icone--grande svg {
+	width: 34px;
+	height: 34px;
+}
+
+/* =======================================================
+   Seção "Nossa estrutura no Rio Grande do Sul"
+   Layout: grade de cartões com ícone, número e descrição
+   ======================================================= */
+
+.estrutura-section {
+	width: 100%;
+	padding: 60px 24px;
+	background-color: #f7f9fb;
+}
+
+.estrutura-container {
+	max-width: 1100px;
+	margin: 0 auto;
 	text-align: center;
-	
 }
 
-footer img{
-	width: 5%;
+.estrutura-grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 24px;
+	margin-top: 32px;
 }
 
-@media(max-width: 700px) {
-	width:100%;
-	height:auto;
+.estrutura-card {
+	/* box-sizing: border-box garante que o padding/borda não somem à largura,
+	   assim os 4 cartões cabem lado a lado numa só linha */
+	box-sizing: border-box;
+	flex: 1 1 22%;
+	background-color: #ffffff;
+	border: 1px solid #e7ebf0;
+	border-radius: 10px;
+	padding: 28px 20px;
+	text-align: center;
 }
 
+.estrutura-card h4 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 17px;
+	color: var(--senac-blue);
+	margin-bottom: 8px;
+}
 
+.estrutura-card p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 1.5;
+	color: #555555;
+}
+
+/* =======================================================
+   Seção "Menor Aprendiz"
+   Layout: ícone à esquerda, texto à direita
+   ======================================================= */
+
+.aprendiz-section {
+	width: 100%;
+	padding: 60px 24px;
+	background-color: #ffffff;
+}
+
+.aprendiz-container {
+	max-width: 1100px;
+	margin: 0 auto;
+	display: flex;
+	align-items: flex-start;
+	gap: 32px;
+}
+
+.aprendiz-texto p {
+	text-align: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	line-height: 1.7;
+	color: #333333;
+	margin-bottom: 14px;
+}
+
+/* =======================================================
+   Seção "Programa Senac de Gratuidade (PSG)"
+   Layout: foto à esquerda, texto à direita (invertido em relação ao "Sobre")
+   ======================================================= */
+
+.psg-section {
+	width: 100%;
+	padding: 60px 24px;
+	background-color: #f7f9fb;
+}
+
+.psg-container {
+	max-width: 1100px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	gap: 48px;
+}
+
+.psg-foto {
+	flex: 1 1 380px;
+	max-width: 460px;
+}
+
+.psg-foto img {
+	display: block;
+	width: 100%;
+	height: 320px;
+	object-fit: cover;
+	border-radius: 8px;
+	border: 1px solid #e7ebf0;
+}
+
+.psg-texto {
+	flex: 1 1 480px;
+}
+
+.psg-texto p {
+	text-align: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	line-height: 1.7;
+	color: #333333;
+	margin-bottom: 14px;
+}
+
+.psg-criterios {
+	margin: 0 0 16px 20px;
+}
+
+.psg-criterios li {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	line-height: 1.8;
+	color: #333333;
+}
+
+.psg-criterios li::marker {
+	color: var(--senac-orange);
+}
+
+/* =======================================================
+   Seção "Metodologia de ensino"
+   Layout: ícone à esquerda, texto à direita (igual ao "Menor Aprendiz")
+   ======================================================= */
+
+.metodologia-section {
+	width: 100%;
+	padding: 60px 24px;
+	background-color: #ffffff;
+}
+
+.metodologia-container {
+	max-width: 1100px;
+	margin: 0 auto;
+	display: flex;
+	align-items: flex-start;
+	gap: 32px;
+}
+
+.metodologia-texto p {
+	text-align: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	line-height: 1.7;
+	color: #333333;
+	margin-bottom: 14px;
+}
+
+/* ===== Responsivo: seções institucionais ===== */
+
+@media (max-width: 700px) {
+	.estrutura-card {
+		max-width: 100%;
+		flex: 1 1 100%;
+	}
+
+	.aprendiz-container,
+	.psg-container,
+	.metodologia-container {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.secao-titulo--esquerda {
+		text-align: center;
+	}
+
+	.aprendiz-texto p,
+	.psg-texto p,
+	.metodologia-texto p {
+		text-align: center;
+	}
+
+	.psg-criterios {
+		text-align: left;
+		margin-left: 32px;
+	}
+}
