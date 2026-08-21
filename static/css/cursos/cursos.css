@@ -1,68 +1,85 @@
-table {
-	margin: 0 auto;	
-	width: 700px;	
-	table-layout: fixed;
-	border-spacing: 15px;
-}
-#tabela img {
-	width: 250px;
-	align-content: center;	
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: auto;
-	margin-bottom: 15px;
-	border-radius: 8px;	
-	border-style:solid;
-	border-color:white;
-}
-#tabela img:hover {
-	border-color:darkblue;
-}
-#tabela a {
-  color: white;
-  text-decoration: none;  
+body {
+	background-color: #ffffff;
 }
 
-td {
-	text-align: center;
-	border-bottom: 1px solid #ddd;
-	background-color: #db7a29;
-	color: white;
-	padding-left: 20px;
-	padding-right: 20px;
-	border-radius: 8px;	
+table {
+	margin: 40px auto;
+	width: 100%;
+	max-width: 1000px;
+	table-layout: fixed;
+	border-spacing: 0 20px;
 }
-p {
-	text-align: justify;
-	margin: 15px;
+
+/* ===== Cartão de cada curso ===== */
+#tabela td {
+	text-align: left;
+	vertical-align: top;
+	background-color: #ffffff;
+	border-top: 1px solid #e7ebf0;
+	border-bottom: 1px solid #e7ebf0;
+	padding: 24px;
+}
+
+#tabela td:first-child {
+	width: 260px;
+	border-left: 1px solid #e7ebf0;
+	border-radius: 10px 0 0 10px;
+}
+
+#tabela td:last-child {
+	border-right: 1px solid #e7ebf0;
+	border-radius: 0 10px 10px 0;
+}
+
+#tabela img {
+	width: 100%;
+	height: 150px;
+	object-fit: cover;
+	border-radius: 8px;
+	border: 1px solid #e7ebf0;
+	display: block;
+}
+
+#tabela h3 {
 	font-family: Arial, Helvetica, sans-serif;
+	color: var(--senac-blue);
+	font-size: 18px;
+	text-align: left;
+	margin: 0 0 12px;
 }
-h3{
+
+#tabela p {
 	font-family: Arial, Helvetica, sans-serif;
-	margin-top: 20px;	
-	text-align:center;
+	font-size: 14px;
+	line-height: 1.6;
+	text-align: left;
+	color: #555555;
+	margin: 0;
 }
-tr {
-	height: 300px;
-	margin-bottom: 20px;
-	margin-top: 20px;
+
+#tabela a {
+	color: var(--senac-orange);
+	font-weight: 600;
+	text-decoration: none;
 }
-td:hover{	
-	color: darkblue;
-	font-weight: bold;
-}
-a:visited {
-	color: blue;
-}
-a {
-	text-decoration: none; 
+
+#tabela a:hover {
+	color: var(--senac-orange-dark);
 }
 
 @media (max-width: 700px) {
-	table{
-		width: 100%;
+	#tabela td:first-child {
+		width: auto;
+		display: block;
 	}
-	#tabela img {
-	width: 90%;
-}
+
+	#tabela td:last-child {
+		display: block;
+		border-top: none;
+		border-radius: 0 0 10px 10px;
+	}
+
+	#tabela td:first-child {
+		border-radius: 10px 10px 0 0;
+	}
 }

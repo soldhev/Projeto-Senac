@@ -6,8 +6,6 @@ body{
 	background-color:#ffffff;
 }
 
-/* Fonte padrão para todas as seções institucionais da página
-   (sem o <article> antigo, precisa ser declarada explicitamente aqui) */
 .sobre-section,
 .estrutura-section,
 .aprendiz-section,
@@ -18,7 +16,6 @@ body{
 
 /* =======================================================
    Seção "Sobre o Senac"
-   Layout: texto + estatísticas à esquerda, foto à direita
    ======================================================= */
 
 .sobre-section {
@@ -26,7 +23,6 @@ body{
 	padding: 60px 24px;
 }
 
-/* Container com as duas colunas (texto / foto) lado a lado */
 .sobre-container {
 	max-width: 1100px;
 	margin: 0 auto;
@@ -130,7 +126,7 @@ body{
 }
 
 /* =======================================================
-   Título usado em todas as seções institucionais abaixo
+   Título usado em todas as seções
    ======================================================= */
 
 .secao-titulo {
@@ -165,7 +161,6 @@ body{
 	height: 26px;
 }
 
-/* Versão maior, usada como destaque ao lado de um bloco de texto */
 .card-icone--grande {
 	width: 72px;
 	height: 72px;
@@ -180,7 +175,6 @@ body{
 
 /* =======================================================
    Seção "Nossa estrutura no Rio Grande do Sul"
-   Layout: grade de cartões com ícone, número e descrição
    ======================================================= */
 
 .estrutura-section {
@@ -204,8 +198,6 @@ body{
 }
 
 .estrutura-card {
-	/* box-sizing: border-box garante que o padding/borda não somem à largura,
-	   assim os 4 cartões cabem lado a lado numa só linha */
 	box-sizing: border-box;
 	flex: 1 1 22%;
 	background-color: #ffffff;
@@ -231,7 +223,6 @@ body{
 
 /* =======================================================
    Seção "Menor Aprendiz"
-   Layout: ícone à esquerda, texto à direita
    ======================================================= */
 
 .aprendiz-section {
@@ -259,7 +250,6 @@ body{
 
 /* =======================================================
    Seção "Programa Senac de Gratuidade (PSG)"
-   Layout: foto à esquerda, texto à direita (invertido em relação ao "Sobre")
    ======================================================= */
 
 .psg-section {
@@ -321,7 +311,6 @@ body{
 
 /* =======================================================
    Seção "Metodologia de ensino"
-   Layout: ícone à esquerda, texto à direita (igual ao "Menor Aprendiz")
    ======================================================= */
 
 .metodologia-section {

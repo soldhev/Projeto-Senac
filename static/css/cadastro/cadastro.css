@@ -1,0 +1,125 @@
+body {
+	background-color: #ffffff;
+}
+
+h2 {
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	color: var(--senac-blue);
+	margin: 30px 0 10px;
+}
+
+hr {
+	border: none;
+	border-top: 1px solid #e7ebf0;
+}
+
+/* ===== Cartão do formulário ===== */
+#formulário {
+	width: 600px;
+	max-width: 90%;
+	margin: 20px auto 60px;
+	background-color: #ffffff;
+	border: 1px solid #e7ebf0;
+	border-radius: 10px;
+	box-shadow: 0 2px 10px rgba(15, 42, 70, 0.08);
+	table-layout: fixed;
+	border-collapse: collapse;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#formulário tr {
+	height: auto;
+}
+
+#formulário td {
+	background-color: transparent;
+	color: inherit;
+	border-radius: 0;
+	text-align: left;
+	padding: 10px 20px;
+	vertical-align: middle;
+}
+
+#formulário thead td {
+	background-color: var(--senac-blue);
+	color: #ffffff;
+	text-align: center;
+	padding: 14px;
+	border-radius: 10px 10px 0 0;
+}
+
+#formulário thead h3 {
+	margin: 0;
+	font-size: 15px;
+}
+
+#formulário tbody label {
+	display: inline-block;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: var(--header-text);
+	font-weight: 600;
+}
+
+/* ===== Campos do formulário ===== */
+#formulário input,
+#formulário select,
+#formulário textarea {
+	width: 100%;
+	padding: 8px 10px;
+	border: 1px solid #cfd8e3;
+	border-radius: 6px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	box-sizing: border-box;
+}
+
+#formulário input:focus,
+#formulário select:focus,
+#formulário textarea:focus {
+	outline: none;
+	border-color: var(--senac-blue);
+}
+
+/* ===== Botões de Cadastrar e Limpar ===== */
+#formulário tfoot td {
+	text-align: center;
+	padding: 20px;
+}
+
+#formulário input[type="submit"],
+#formulário input[type="reset"] {
+	width: auto;
+	padding: 10px 26px;
+	border-radius: 8px;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+#formulário input[type="submit"] {
+	background-color: var(--senac-orange);
+	color: #ffffff;
+	border: 1.5px solid var(--senac-orange);
+}
+
+#formulário input[type="submit"]:hover {
+	background-color: var(--senac-orange-dark);
+}
+
+#formulário input[type="reset"] {
+	background-color: #ffffff;
+	color: var(--senac-blue);
+	border: 1.5px solid var(--senac-blue);
+}
+
+#formulário input[type="reset"]:hover {
+	background-color: var(--senac-blue);
+	color: #ffffff;
+}
+
+@media (max-width: 700px) {
+	#formulário {
+		width: 100%;
+	}
+}

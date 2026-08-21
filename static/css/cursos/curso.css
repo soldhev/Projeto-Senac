@@ -1,36 +1,93 @@
-p{
-	text-align: justify;
-	font-family: Arial, Helvetica, sans-serif;
-	width: 500px;
-	margin-left: auto;
-	margin-right: auto;
+body {
+	background-color: #ffffff;
+}
+
+hr {
+	border: none;
+	border-top: 1px solid #e7ebf0;
+	margin: 0;
+}
+
+a {
 	text-decoration: none;
 }
 
+/* ===== Texto do curso ===== */
+p {
+	text-align: left;
+	font-family: Arial, Helvetica, sans-serif;
+	width: auto;
+	max-width: 900px;
+	margin: 0 auto 14px;
+	font-size: 15px;
+	line-height: 1.7;
+	color: #333333;
+}
+
+article {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 30px 24px 10px;
+}
+
+h2#p1 {
+	text-align: center;
+	font-size: 28px;
+	color: var(--senac-blue);
+	margin: 10px 0;
+}
+
+/* ===== Foto de topo ===== */
 .headimage {
 	display: flex;
 	justify-content: center;
-	
-}
-table {
-	text-align: center;
-	display:flex;
-	justify-content:center;
-	width:500px;
-	margin-left:auto; 
-    margin-right:auto;
-	
-}
-table, th, td{
-	border: 1px solid black;
-}
-a{
-	text-decoration:none;
+
 }
 
-/*#p1 {
-	width:500px;
+.headimage img {
+	width: 100%;
+	max-height: 380px;
+	object-fit: cover;
+}
+
+/* Tabela de cursos (cursos.html) */
+#tabela {
 	text-align: center;
 	display:flex;
 	justify-content:center;
+	width:500px;
+	margin-left:auto;
+    margin-right:auto;
+
+}
+
+table, th, td {
+	border: 1px solid #e7ebf0;
+}
+
+/* ===== Tabela "Informações" (carga horária, turnos, etc) ===== */
+article ~ table {
+	width: 100%;
+	max-width: 900px;
+	margin: 20px auto;
+	border-collapse: collapse;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+article ~ table thead td {
+	background-color: var(--senac-blue);
+	color: #ffffff;
+	font-weight: bold;
+	text-align: center;
+	padding: 12px;
+}
+
+article ~ table tbody td {
+	padding: 10px 16px;
+	color: #333333;
+}
+
+article ~ table tbody tr:nth-child(even) {
+	background-color: #f7f9fb;
 }

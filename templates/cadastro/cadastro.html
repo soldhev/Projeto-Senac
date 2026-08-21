@@ -2,10 +2,13 @@
 <html lang="pt-br">
 	<head>
 		<meta charset="UTF-8">
-		<title>Senac Tech - Cursos</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Senac Tech - Cadastro</title>
+		<link rel="stylesheet" type="text/css" href="../../static/css/global/reset.css">
 		<link rel="stylesheet" type="text/css" href="../../static/css/home/body.css">
 		<link rel="stylesheet" type="text/css" href="../../static/css/global/menu.css">
 		<link rel="stylesheet" type="text/css" href="../../static/css/cursos/curso.css">
+		<link rel="stylesheet" type="text/css" href="../../static/css/cadastro/cadastro.css">
 		<link rel="stylesheet" type="text/css" href="../../static/css/global/footer.css">
 	</head>
 	<body> 
@@ -43,12 +46,6 @@
 				</div>
 			</div>
 		</header>
-		
-		
-<h3>
-
-		
-
 		<hr>
 
 			<h2>Crie Seu Cadastro</h2>
@@ -57,6 +54,12 @@
 			<form action="cadastrar.php" method="post">
 				
 				<table id="formulário">
+
+					<!-- Largura das colunas -->
+					<colgroup>
+						<col style="width: 160px">
+						<col>
+					</colgroup>
 
 				 	<thead>
 						<tr>
@@ -70,92 +73,92 @@
 						
 						<tr>
 							<td>
-								<h3>
+								<label for="nome">
 									Nome:
-								</h3>
+								</label>
 							</td>
 
 							<td>
-								<input type="text" name="Nome" required size="30" maxlength="30">
+								<input type="text" id="nome" name="Nome" required size="30" maxlength="30">
 							</td>
 
 						</tr>						
 
 						<tr>
 							<td>
-								<h3>
+								<label for="sobrenome">
 									Sobrenome:
-								</h3>
+								</label>
 							</td>
 
 							<td>
-								<input type="text" name="Sobrenome" required size="30" maxlength="30">
+								<input type="text" id="sobrenome" name="Sobrenome" required size="30" maxlength="30">
 							</td>
 
 						</tr>						
 				
 						<tr>
 							<td>
-								<h3>
+								<label for="endereco">
 									Endereço:
-								</h3>
+								</label>
 							</td>
 
 							<td>
-								<input type="text" name="Endereco" required size="30" maxlength="30">
+								<input type="text" id="endereco" name="Endereco" required size="30" maxlength="30">
 							</td>
 
 						</tr>	
 
 						<tr>
 							<td align="right" >
-								<h3>
+								<label for="numero">
 									Número:
-								</h3>
+								</label>
 							</td>
 
 							<td align="left">
-								<input type="number" name="Numero" required size="30" maxlength="5"> 
+								<input type="number" id="numero" name="Numero" required size="30" maxlength="5">
 							</td>
 
 						</tr>							
 
 						<tr>
 							<td align="right" >
-								<h3>
+								<label for="bairro">
 									Bairro:
-								</h3>
+								</label>
 							</td>
 
 							<td align="left">
-								<input type="text" name="Bairro" required size="30">
+								<input type="text" id="bairro" name="Bairro" required size="30">
 							</td>
 
 						</tr>		
 
 						<tr>
 							<td align="right" >
-								<h3>
+								<label for="cidade">
 									Cidade:
-								</h3>
+								</label>
 							</td>
 
 							<td align="left">
-								<input type="text" name="cidade" required size="30">
+								<input type="text" id="cidade" name="cidade" required size="30">
 							</td>
 
 						</tr>	
 
 						<tr>
 							<td align="right" >
-								<h3>
+								<label for="estado">
 									Estado:
-								</h3>
+								</label>
 							</td>
 
 							<td align="left">
 
-								<select >
+								<select id="estado">
 
 							<option value="">Selecione o Estado (UF)</option>		
 							<option value="">Acre</option>
@@ -193,26 +196,26 @@
 						
 						<tr>
 							<td align="right" >
-								<h3>
+								<label for="cpf">
 									CPF:
-								</h3>
+								</label>
 							</td>
 
 							<td align="left">
-								<input type="number" name="cpf" required size="30" maxlength="11">
+								<input type="number" id="cpf" name="cpf" required size="30" maxlength="11">
 							</td>
 
 						</tr>	
 
 						<tr>
 							<td align="right" >
-								<h3>
+								<label for="rg">
 									RG:
-								</h3>
+								</label>
 							</td>
 
 							<td align="left">
-								<input type="number" name="rg" required size="30" maxlength="10">
+								<input type="number" id="rg" name="rg" required size="30" maxlength="10">
 							</td>
 
 						</tr>	
@@ -220,65 +223,65 @@
 
 						<tr>
 							<td align="right" >
-								<h3>
+								<label for="data-nascimento">
 									Data de Nascimento:
-								</h3>
+								</label>
 							</td>
 
 							<td align="left">
-								<input type="date" name="datanascsc" required>
+								<input type="date" id="data-nascimento" name="datanascsc" required>
 							</td>
 
 						</tr>			
 
 						<tr>
 							<td align="right" >
-								<h3>
+								<label for="celular">
 									Celular:
-								</h3>
+								</label>
 							</td>
 
 							<td align="left">
-								<input type="tel" name="celular" required size="30" maxlength="12" hyphen-minus placeholder="(xx)xxxxx-xxxx">
+								<input type="tel" id="celular" name="celular" required size="30" maxlength="12" hyphen-minus placeholder="(xx)xxxxx-xxxx">
 							</td>
 
 						</tr>
 
 						<tr>
 							<td align="right" >
-								<h3>
+								<label for="email">
 									E-mail:
-								</h3>
+								</label>
 							</td>
 
 							<td align="left">
-								<input type="email" name="email" required size="30" placeholder="nome@dominio.com">
+								<input type="email" id="email" name="email" required size="30" placeholder="nome@dominio.com">
 							</td>
 
 						</tr>
 
 						<tr>
 							<td align="right" >
-								<h3>
+								<label for="usuario">
 									Usuário:
-								</h3>
+								</label>
 							</td>
 
 							<td align="left">
-								<input type="text" name="usuario" required size="30">
+								<input type="text" id="usuario" name="usuario" required size="30">
 							</td>
 
 						</tr>
 
 						<tr>
 							<td align="right" >
-								<h3>
+								<label for="senha">
 									Senha:
-								</h3>
+								</label>
 							</td>
 
 							<td align="left">
-								<input type="password" name="senha" required size="30">
+								<input type="password" id="senha" name="senha" required size="30">
 							</td>
 
 						</tr>
@@ -286,13 +289,13 @@
 						<tr>
 							
 							<td align="right">
-								<h3>
+								<label for="obs">
 									Observação:
-								</h3>
+								</label>
 							</td>
 
 							<td align="left">
-								<textarea name="obs" rows="4" cols="30"> </textarea>
+								<textarea id="obs" name="obs" rows="4" cols="30"> </textarea>
 							</td>
 						</tr>
 
@@ -336,7 +339,7 @@
 			<div class="footer-container">
 				<div class="footer-brand">
 					<div class="footer-logo">
-						<img src="../../static/imagens/logo/logosenac.png" alt="Logo Senac" title="Senac" id="footerlogosenac">
+						<img src="../../static/imagens/logo/senac_logo_new.png" alt="Logo Senac" title="Senac" id="footerlogosenac">
 					</div>
 					<p class="footer-tagline">
 						Há mais de 70 anos formando profissionais para o mercado de trabalho. O Senac-RS une tradição e inovação para oferecer educação profissional de qualidade em todo o Rio Grande do Sul.
