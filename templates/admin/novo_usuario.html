@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Senac Tech - Novo Usuário</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../../static/css/global/variables.css">
+		<link rel="stylesheet" type="text/css" href="../../static/css/home/body.css">
+		<link rel="stylesheet" type="text/css" href="../../static/css/global/menu.css">
+		<link rel="stylesheet" type="text/css" href="../../static/css/global/footer.css">
+		<link rel="stylesheet" type="text/css" href="../../static/css/admin/admin.css">
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="header-container">
+				<img src="../../static/imagens/logo/logosenac.png" alt="Logo Senac" title="Senac" id="logosenac">
+
+				<input type="checkbox" id="bt_menu">
+				<label for="bt_menu">&#9776;</label>
+
+				<nav id="menu">
+					<ul>
+						<li>
+							<a href="../home/index.html">Início</a>
+						</li>
+						<li>
+							<a href="painel.html">Painel Admin</a>
+						</li>
+					</ul>
+				</nav>
+
+				<div class="header-actions">
+					<a href="../login/logout" class="btn btn-entrar">Sair</a>
+				</div>
+			</div>
+		</header>
+
+		<main class="admin-main">
+			<h2>Cadastrar Novo Usuário</h2>
+			<a href="painel.html" class="admin-voltar">&larr; Voltar para o painel</a>
+
+			{% if erro %}
+				<div class="login-mensagem login-erro">{{ erro }}</div>
+			{% endif %}
+
+			<form action="" method="post" enctype="multipart/form-data" class="admin-form form-valida-senha">
+				<div class="admin-form-linha">
+					<div>
+						<label for="nome">Nome</label>
+						<input type="text" id="nome" name="nome" required>
+					</div>
+					<div>
+						<label for="sobrenome">Sobrenome</label>
+						<input type="text" id="sobrenome" name="sobrenome" required>
+					</div>
+				</div>
+
+				<div class="admin-form-linha">
+					<div>
+						<label for="email">E-mail</label>
+						<input type="email" id="email" name="email" required>
+					</div>
+					<div>
+						<label for="usuario">Usuário</label>
+						<input type="text" id="usuario" name="usuario" required>
+					</div>
+				</div>
+
+				<div class="admin-form-linha">
+					<div>
+						<label for="endereco">Endereço</label>
+						<input type="text" id="endereco" name="endereco" required>
+					</div>
+					<div>
+						<label for="numero">Número</label>
+						<input type="text" id="numero" name="numero" required>
+					</div>
+				</div>
+
+				<div class="admin-form-linha">
+					<div>
+						<label for="bairro">Bairro</label>
+						<input type="text" id="bairro" name="bairro" required>
+					</div>
+					<div>
+						<label for="cidade">Cidade</label>
+						<input type="text" id="cidade" name="cidade" required>
+					</div>
+					<div>
+						<label for="estado">Estado (UF)</label>
+						<input type="text" id="estado" name="estado" maxlength="2" required>
+					</div>
+				</div>
+
+				<div class="admin-form-linha">
+					<div>
+						<label for="cpf">CPF</label>
+						<input type="text" id="cpf" name="cpf" required>
+					</div>
+					<div>
+						<label for="rg">RG</label>
+						<input type="text" id="rg" name="rg" required>
+					</div>
+					<div>
+						<label for="data_nascimento">Data de Nascimento</label>
+						<input type="date" id="data_nascimento" name="data_nascimento" required>
+					</div>
+				</div>
+
+				<div class="admin-form-linha">
+					<div>
+						<label for="celular">Celular</label>
+						<input type="tel" id="celular" name="celular" required>
+					</div>
+					<div class="admin-checkbox-linha">
+						<label for="admin">
+							<input type="checkbox" id="admin" name="admin">
+							Este usuário é administrador
+						</label>
+					</div>
+				</div>
+
+				<label for="observacao">Observação</label>
+				<textarea id="observacao" name="observacao" rows="3"></textarea>
+
+				<label for="foto">Foto de Perfil (opcional)</label>
+				<input type="file" id="foto" name="foto" accept=".png,.jpg,.jpeg">
+
+				<h3 class="admin-form-subtitulo">Senha de Acesso</h3>
+
+				<div class="admin-form-linha">
+					<div>
+						<label for="senha">Senha</label>
+						<input type="password" id="senha" name="senha" required>
+					</div>
+					<div>
+						<label for="confirmar_senha">Confirmar senha</label>
+						<input type="password" id="confirmar_senha" name="confirmar_senha" required>
+					</div>
+				</div>
+
+				<button type="submit" class="btn-entrar-form">Cadastrar usuário</button>
+			</form>
+		</main>
+		<script src="../../static/js/validacao.js"></script>
+	</body>
+</html>

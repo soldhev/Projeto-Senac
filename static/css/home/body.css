@@ -1,0 +1,50 @@
+/* Estilos base aplicados ao <body> inteiro do site (carregado em
+   praticamente todas as páginas), usando o sistema de design
+   definido em global/variables.css. */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--ink);
+    background-color: var(--paper);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    color: var(--ink);
+    line-height: 1.15;
+}
+
+/* Foco visível pelo teclado - acessibilidade */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--senac-blue-electric);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Respeita quem prefere menos animação no sistema */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

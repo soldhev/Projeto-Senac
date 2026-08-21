@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Senac Tech - Painel Administrativo</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../../static/css/global/variables.css">
+		<link rel="stylesheet" type="text/css" href="../../static/css/home/body.css">
+		<link rel="stylesheet" type="text/css" href="../../static/css/global/menu.css">
+		<link rel="stylesheet" type="text/css" href="../../static/css/global/footer.css">
+		<link rel="stylesheet" type="text/css" href="../../static/css/admin/admin.css">
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="header-container">
+				<img src="../../static/imagens/logo/logosenac.png" alt="Logo Senac" title="Senac" id="logosenac">
+
+				<input type="checkbox" id="bt_menu">
+				<label for="bt_menu">&#9776;</label>
+
+				<nav id="menu">
+					<ul>
+						<li>
+							<a href="../home/index.html">Início</a>
+						</li>
+						<li>
+							<a href="painel.html">Painel Admin</a>
+						</li>
+					</ul>
+				</nav>
+
+				<div class="header-actions">
+					<a href="../login/logout" class="btn btn-entrar">Sair</a>
+				</div>
+			</div>
+		</header>
+
+		<main class="admin-main">
+			<h2>Painel Administrativo</h2>
+			<p class="admin-subtitulo">Gerencie os usuários cadastrados no site.</p>
+
+			<a href="novo_usuario.html" class="admin-btn-editar admin-btn-novo">+ Cadastrar Novo Usuário</a>
+
+			<div class="admin-tabela-wrapper">
+				<table class="admin-tabela">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Nome</th>
+							<th>E-mail</th>
+							<th>Usuário</th>
+							<th>Cidade/UF</th>
+							<th>Admin</th>
+							<th>Ações</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for usuario in usuarios %}
+						<tr>
+							<td>
+								{% if usuario["foto_perfil"] %}
+									<img src="../../static/uploads/perfil/{{ usuario['foto_perfil'] }}" alt="" class="admin-foto-mini">
+								{% else %}
+									<span class="admin-foto-mini admin-foto-mini-vazia">{{ usuario["nome"][0] }}{{ usuario["sobrenome"][0] }}</span>
+								{% endif %}
+							</td>
+							<td>{{ usuario["nome"] }} {{ usuario["sobrenome"] }}</td>
+							<td>{{ usuario["email"] }}</td>
+							<td>{{ usuario["usuario"] }}</td>
+							<td>{{ usuario["cidade"] }}/{{ usuario["estado"] }}</td>
+							<td>{{ "Sim" if usuario["admin"] else "Não" }}</td>
+							<td class="admin-acoes">
+								<a href="editar_usuario/{{ usuario['id'] }}.html" class="admin-btn-editar">Editar</a>
+								<form action="excluir_usuario/{{ usuario['id'] }}" method="post"
+									onsubmit="return confirm('Tem certeza que deseja excluir este usuário?');">
+									<button type="submit" class="admin-btn-excluir">Excluir</button>
+								</form>
+							</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</main>
+	</body>
+</html>

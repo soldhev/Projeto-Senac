@@ -1,0 +1,156 @@
+/* ============================================================
+   LISTAGEM DE CURSOS - Senac Tech
+   ============================================================ */
+
+.cursos-intro {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 24px 16px;
+    text-align: center;
+}
+
+.cursos-intro h1 {
+    font-size: clamp(1.6rem, 3.4vw, 2.3rem);
+    margin: 10px 0 16px;
+}
+
+.cursos-intro-texto {
+    color: var(--ink-muted);
+}
+
+/* ===== Trilha (lista de cursos com "conector" entre os cards) ===== */
+
+.trilha-cursos {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px 24px 96px;
+}
+
+.trilha-lista {
+    list-style: none;
+    position: relative;
+}
+
+/* A linha vertical que "conecta" os cursos, como uma trilha de rede */
+.trilha-lista::before {
+    content: "";
+    position: absolute;
+    left: 27px;
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    background: repeating-linear-gradient(
+        to bottom,
+        var(--line) 0,
+        var(--line) 6px,
+        transparent 6px,
+        transparent 12px
+    );
+}
+
+.trilha-item {
+    position: relative;
+    padding-left: 64px;
+    margin-bottom: 28px;
+}
+
+.trilha-item:last-child {
+    margin-bottom: 0;
+}
+
+.trilha-no {
+    position: absolute;
+    left: 20px;
+    top: 34px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--paper-alt);
+    border: 3px solid var(--senac-blue-electric);
+    z-index: 2;
+}
+
+.curso-card {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    background-color: var(--paper-alt);
+    border: 1px solid var(--line);
+    border-radius: var(--raio);
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.curso-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--sombra-forte);
+    border-color: var(--senac-blue-electric);
+}
+
+.curso-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 150px;
+}
+
+.curso-card-corpo {
+    padding: 20px 24px;
+}
+
+.curso-tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--senac-orange-dark);
+    background-color: #fbeee0;
+    padding: 3px 9px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+}
+
+.curso-card-corpo h2 {
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+}
+
+.curso-card-corpo p {
+    color: var(--ink-muted);
+    font-size: 14.5px;
+    margin-bottom: 14px;
+}
+
+.curso-link {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--senac-blue-electric);
+}
+
+/* ===== Responsivo ===== */
+
+@media (max-width: 620px) {
+    .trilha-lista::before {
+        left: 17px;
+    }
+
+    .trilha-item {
+        padding-left: 40px;
+    }
+
+    .trilha-no {
+        left: 10px;
+        top: 20px;
+    }
+
+    .curso-card {
+        grid-template-columns: 1fr;
+    }
+
+    .curso-card img {
+        aspect-ratio: 16 / 9;
+        min-height: 0;
+    }
+}

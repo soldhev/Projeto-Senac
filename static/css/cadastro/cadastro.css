@@ -1,0 +1,160 @@
+/* Cores usadas em todo o site (mesmas do menu.css, login.css e admin.css) */
+/* ===== Fundo da página e título ===== */
+
+body {
+    background-color: #f5f7f9;
+}
+
+h2 {
+    text-align: center;
+    color: var(--senac-blue);
+    margin-top: 2em;
+    margin-bottom: 1.5em;
+}
+
+/* A linha <hr> antes do título fica mais discreta */
+hr {
+    border: none;
+    border-top: 1px solid #e0e5ea;
+    margin: 1.5em auto 0 auto;
+    width: 90%;
+}
+
+/* ===== Formulário (a tabela em si) ===== */
+
+form {
+    display: flex;
+    justify-content: center;
+    padding: 0 1em;
+}
+
+#formulário {
+    width: 100%;
+    max-width: 640px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 18px rgba(15, 42, 70, 0.1);
+    padding: 1.5em 2em;
+    border-collapse: collapse;
+}
+
+/* Cabeçalho "Todos os Campos São Obrigatórios" */
+#formulário thead td {
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+#formulário thead h3 {
+    color: var(--senac-blue-dark);
+    font-size: 1em;
+    margin: 0;
+}
+
+/* ===== Cada linha nome/campo ===== */
+
+#formulário tbody tr {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.9em;
+}
+
+/* Os rótulos (Nome, CPF, etc.) usam <h3>, então deixamos com
+   cara de "label" em vez de título grande */
+#formulário tbody h3 {
+    font-size: 0.85em;
+    font-weight: bold;
+    color: var(--senac-blue-dark);
+    margin: 0 0 0.3em 0;
+    text-align: left;
+}
+
+/* Os campos ficam ocupando a linha toda, alinhados à esquerda,
+   sobrescrevendo o align="right"/align="left" que vem do HTML */
+#formulário tbody td {
+    text-align: left !important;
+    width: 100%;
+}
+
+/* ===== Campos de entrada (texto, número, data, select, etc.) ===== */
+
+#formulário input,
+#formulário select,
+#formulário textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.6em 0.7em;
+    border: 1px solid #d5dbe1;
+    border-radius: 6px;
+    font-size: 0.95em;
+    font-family: inherit;
+    background-color: #fdfdfd;
+}
+
+#formulário input:focus,
+#formulário select:focus,
+#formulário textarea:focus {
+    outline: none;
+    border-color: var(--senac-blue);
+    background-color: #ffffff;
+}
+
+#formulário textarea {
+    resize: vertical;
+}
+
+/* ===== Botões (Cadastrar / Limpar) ===== */
+
+#formulário tfoot td {
+    text-align: center;
+    padding-top: 1em;
+}
+
+#formulário input[type="submit"],
+#formulário input[type="reset"] {
+    width: auto;
+    padding: 0.7em 2em;
+    font-size: 0.95em;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 0 0.4em;
+}
+
+#formulário input[type="submit"] {
+    background-color: var(--senac-orange);
+    color: #ffffff;
+}
+
+#formulário input[type="submit"]:hover {
+    background-color: var(--senac-orange-dark);
+}
+
+#formulário input[type="reset"] {
+    background-color: #ffffff;
+    color: var(--senac-blue);
+    border: 1px solid var(--senac-blue);
+}
+
+#formulário input[type="reset"]:hover {
+    background-color: #eef3f7;
+}
+
+/* Pré-visualização da foto escolhida no input file (usada pelo validacao.js) */
+.preview-foto-oculta {
+    display: none;
+}
+
+#preview-foto {
+    max-width: 120px;
+    margin-top: 0.5em;
+    border-radius: 8px;
+}
+
+/* ===== Telas pequenas (celular) ===== */
+
+@media (max-width: 480px) {
+    #formulário {
+        padding: 1.2em 1em;
+    }
+}

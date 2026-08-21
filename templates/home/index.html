@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Senac Tech - Início</title>
+
+		<!-- Definição de codificação de caracteres. Recomenda-se usar sempre UTF-8 -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../static/css/global/reset.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../../static/css/global/variables.css">
+		<link rel="stylesheet" type="text/css" href="../../static/css/home/index.css">
+		<link rel="stylesheet" type="text/css" href="../../static/css/home/body.css">
+		<link rel="stylesheet" type="text/css" href="../../static/css/global/menu.css">
+		<link rel="stylesheet" type="text/css" href="../../static/css/global/footer.css">
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="header-container">
+				<img src="../../static/imagens/logo/logosenac2.png" alt="Logo Senac" title="Senac" id="logosenac">
+
+				<input type="checkbox" id="bt_menu">
+				<label for="bt_menu">&#9776;</label>
+
+				<nav id="menu">
+					<ul>
+						<li>
+							<a href="index.html">Início</a>
+						</li>
+						<li class="dropdown">
+							<a href="../cursos/cursos.html">Cursos</a>
+							<ul>
+								<li><a href="../cursos/curso_info.html">Técnico em Informática</a></li>
+								<li><a href="../cursos/curso_redes.html">Técnico em Redes de Computadores</a></li>
+								<li><a href="../cursos/curso_sistemas.html">Técnico em Desenvolvimento de Sistemas</a></li>
+								<li><a href="../cursos/curso_admin.html">Técnico em Administração</a></li>
+								<li><a href="../cursos/curso_jogos.html">Técnico em Prog. de Jogos Digitais</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="../localizacao/localizacao.html">Localização</a>
+						</li>
+					</ul>
+				</nav>
+
+				<div class="header-actions">
+					{% if session.usuario_id %}
+					<a href="../perfil/perfil.html" class="btn btn-entrar">Meu Perfil</a>
+					<a href="../login/logout" class="btn btn-cadastrar">Sair</a>
+					{% else %}
+					<a href="../login/login.html" class="btn btn-entrar">Entrar</a>
+					<a href="../cadastro/cadastro.html" class="btn btn-cadastrar">Cadastrar</a>
+					{% endif %}
+				</div>
+			</div>
+		</header>
+
+		<main>
+			<!-- ===== Hero ===== -->
+			<section class="hero">
+				<div class="hero-grade">
+					<div class="hero-texto">
+						<p class="hero-eyebrow">&gt; senac-rs / educação profissional</p>
+						<h1>Construa sua carreira<br>em tecnologia.</h1>
+						<p class="hero-descricao">
+							Cursos técnicos em Informática, Redes, Sistemas, Administração e Jogos Digitais,
+							com certificado de validade nacional e mais de 70 anos de experiência formando
+							profissionais no Rio Grande do Sul.
+						</p>
+						<div class="hero-acoes">
+							<a href="../cursos/cursos.html" class="btn-hero btn-hero-primario">Ver cursos disponíveis</a>
+							<a href="../cadastro/cadastro.html" class="btn-hero btn-hero-secundario">Fazer cadastro</a>
+						</div>
+					</div>
+
+					<div class="hero-painel" aria-hidden="true">
+						<div class="hero-painel-topo">
+							<span></span><span></span><span></span>
+						</div>
+						<div class="hero-painel-corpo">
+							<p class="linha-terminal"><span class="prompt">&gt;</span> matricula --curso="tecnico"</p>
+							<p class="linha-terminal linha-resultado">status: <span class="tag-ok">vagas abertas</span></p>
+							<p class="linha-terminal"><span class="prompt">&gt;</span> unidade --local="cidade-baixa"</p>
+							<p class="linha-terminal linha-resultado">turnos: manhã · tarde · noite</p>
+							<p class="linha-terminal"><span class="prompt">&gt;</span> certificado --validade</p>
+							<p class="linha-terminal linha-resultado">nacional <span class="cursor-piscando">▍</span></p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- ===== Estatísticas reais (extraídas do histórico do Senac-RS) ===== -->
+			<section class="faixa-stats">
+				<div class="faixa-stats-grade">
+					<div class="stat">
+						<span class="stat-numero">70+</span>
+						<span class="stat-legenda">anos de atuação no RS</span>
+					</div>
+					<div class="stat">
+						<span class="stat-numero">7M+</span>
+						<span class="stat-legenda">gaúchos já capacitados</span>
+					</div>
+					<div class="stat">
+						<span class="stat-numero">497</span>
+						<span class="stat-legenda">municípios atendidos</span>
+					</div>
+					<div class="stat">
+						<span class="stat-numero">41</span>
+						<span class="stat-legenda">escolas profissionalizantes</span>
+					</div>
+				</div>
+			</section>
+
+			<!-- ===== Sobre o Senac ===== -->
+			<section class="sobre">
+				<div class="sobre-cabecalho">
+					<p class="eyebrow-mono">sobre a instituição</p>
+					<h2>Tradição e inovação em educação profissional</h2>
+				</div>
+
+				<div class="sobre-grade">
+					<div class="sobre-texto">
+						<p>
+							O Serviço Nacional de Aprendizagem Comercial – Senac é uma instituição de
+							educação profissional, fundada em 10 de janeiro de 1946 para colaborar na
+							difusão e no aperfeiçoamento do ensino profissional no setor terciário. No Rio
+							Grande do Sul, o Senac foi instalado em 13 de setembro do mesmo ano e, em mais
+							de 70 anos de atuação, já capacitou mais de 7 milhões de gaúchos.
+						</p>
+						<p>
+							O Senac-RS disponibiliza educação em todos os níveis — do Menor Aprendiz à
+							Pós-Graduação. Atualmente, conta com duas faculdades e 41 escolas de educação
+							profissional distribuídas pelo Estado, além de mais de 60 postos de
+							atendimento que alcançam todos os 497 municípios gaúchos.
+						</p>
+					</div>
+					<figure class="sobre-imagem">
+						<img src="../../static/imagens/gerais/saladeaula.jpg" alt="Sala de aula do Senac com alunos utilizando computadores" title="Senac Tech">
+					</figure>
+				</div>
+
+				<div class="sobre-grade sobre-grade-invertida">
+					<figure class="sobre-imagem">
+						<img src="../../static/imagens/gerais/alunos.jpeg" alt="Alunos do Senac trabalhando em atividade prática" title="Alunos trabalhando">
+					</figure>
+					<div class="sobre-texto">
+						<h3>Programa Senac de Gratuidade</h3>
+						<p>
+							Resultado de um acordo entre o Senac e o Governo Federal em 2008, o PSG oferece
+							cursos de Aprendizagem, nível técnico, qualificação e aperfeiçoamento — mais de
+							20 mil alunos atendidos gratuitamente por ano nas unidades do Estado, priorizando
+							pessoas de baixa renda, estudantes e trabalhadores.
+						</p>
+						<p>
+							Com laboratórios de alta tecnologia e metodologias personalizadas, o modelo
+							pedagógico do Senac forma profissionais capazes de articular conhecimento,
+							habilidade e atitude para agir com autonomia dentro e fora do mundo do trabalho.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- ===== Vitrine de cursos ===== -->
+			<section class="vitrine-cursos">
+				<div class="sobre-cabecalho">
+					<p class="eyebrow-mono">cursos técnicos</p>
+					<h2>Escolha sua trilha</h2>
+				</div>
+
+				<div class="vitrine-grade">
+					<a href="../cursos/curso_info.html" class="vitrine-card">
+						<img src="../../static/imagens/cursos/curso-ti.png" alt="" loading="lazy">
+						<div class="vitrine-card-corpo">
+							<span class="vitrine-tag">TI</span>
+							<h3>Informática</h3>
+						</div>
+					</a>
+					<a href="../cursos/curso_redes.html" class="vitrine-card">
+						<img src="../../static/imagens/cursos/curso-redes.png" alt="" loading="lazy">
+						<div class="vitrine-card-corpo">
+							<span class="vitrine-tag">REDES</span>
+							<h3>Redes de Computadores</h3>
+						</div>
+					</a>
+					<a href="../cursos/curso_sistemas.html" class="vitrine-card">
+						<img src="../../static/imagens/cursos/curso-sistemas.png" alt="" loading="lazy">
+						<div class="vitrine-card-corpo">
+							<span class="vitrine-tag">DEV</span>
+							<h3>Desenvolvimento de Sistemas</h3>
+						</div>
+					</a>
+					<a href="../cursos/curso_admin.html" class="vitrine-card">
+						<img src="../../static/imagens/cursos/curso-admin.png" alt="" loading="lazy">
+						<div class="vitrine-card-corpo">
+							<span class="vitrine-tag">ADM</span>
+							<h3>Administração</h3>
+						</div>
+					</a>
+					<a href="../cursos/curso_jogos.html" class="vitrine-card">
+						<img src="../../static/imagens/cursos/curso-jogos.png" alt="" loading="lazy">
+						<div class="vitrine-card-corpo">
+							<span class="vitrine-tag">GAME</span>
+							<h3>Programação de Jogos Digitais</h3>
+						</div>
+					</a>
+				</div>
+			</section>
+
+			<!-- ===== CTA final ===== -->
+			<section class="cta-final">
+				<h2>Pronto para começar?</h2>
+				<p>Faça seu cadastro e garanta sua vaga em um dos cursos técnicos do Senac-RS.</p>
+				<a href="../cadastro/cadastro.html" class="btn-hero btn-hero-primario">Cadastre-se agora</a>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<div class="footer-container">
+				<div class="footer-brand">
+					<div class="footer-logo">
+						<img src="../../static/imagens/logo/senac_logo_new.png" alt="Logo Senac" title="Senac" id="footerlogosenac">
+					</div>
+					<p class="footer-tagline">
+						Há mais de 70 anos formando profissionais para o mercado de trabalho. O Senac-RS une tradição e inovação para oferecer educação profissional de qualidade em todo o Rio Grande do Sul.
+					</p>
+					<div class="footer-social">
+						<a href="https://www.instagram.com/senacrs/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram do Senac">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+								<rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+								<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+								<line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+							</svg>
+						</a>
+						<a href="https://www.facebook.com/senacrsoficial/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook do Senac">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+							</svg>
+						</a>
+						<a href="https://www.linkedin.com/school/senac-rs/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn do Senac">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+								<rect x="2" y="9" width="4" height="12"></rect>
+								<circle cx="4" cy="4" r="2"></circle>
+							</svg>
+						</a>
+					</div>
+				</div>
+
+				<div class="footer-col">
+					<h3>Cursos</h3>
+					<ul>
+						<li><a href="../cursos/curso_info.html">Informática</a></li>
+						<li><a href="../cursos/curso_redes.html">Redes de Computadores</a></li>
+						<li><a href="../cursos/curso_sistemas.html">Desenvolvimento de Sistemas</a></li>
+						<li><a href="../cursos/curso_admin.html">Administração</a></li>
+						<li><a href="../cursos/curso_jogos.html">Jogos Digitais</a></li>
+					</ul>
+				</div>
+
+				<div class="footer-col">
+					<h3>Institucional</h3>
+					<ul>
+						<li><a href="index.html">Início</a></li>
+						<li><a href="../localizacao/localizacao.html">Localização</a></li>
+						<li><a href="../login/login.html">Entrar</a></li>
+						<li><a href="../cadastro/cadastro.html">Cadastre-se</a></li>
+					</ul>
+				</div>
+
+				<div class="footer-col">
+					<h3>Contato</h3>
+					<ul>
+						<li><a href="tel:+555132887750">(51) 3288-7750</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="footer-bottom">
+				<p>&copy; 2026 Senac. Todos os direitos reservados.</p>
+				<p>Projeto acadêmico desenvolvido para fins de estudo — não é um site oficial do Senac.</p>
+			</div>
+		</footer>
+	</body>
+</html>

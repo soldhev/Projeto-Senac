@@ -1,0 +1,184 @@
+.admin-main {
+    padding: 2.5em 5%;
+    background-color: #f5f7f9;
+    min-height: 60vh;
+}
+
+.admin-main h2 {
+    color: var(--senac-blue);
+    margin-bottom: 0.2em;
+}
+
+.admin-subtitulo {
+    color: #555;
+    margin-bottom: 1.5em;
+}
+
+.admin-voltar {
+    display: inline-block;
+    margin-bottom: 1.2em;
+    color: var(--senac-blue);
+    font-weight: bold;
+}
+
+/* ===== Tabela de usuários ===== */
+
+.admin-tabela-wrapper {
+    overflow-x: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(15, 42, 70, 0.08);
+}
+
+.admin-tabela {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-tabela th,
+.admin-tabela td {
+    padding: 0.8em 1em;
+    text-align: left;
+    border-bottom: 1px solid #eef1f4;
+    font-size: 0.9em;
+}
+
+.admin-tabela th {
+    background-color: var(--senac-blue);
+    color: #fff;
+}
+
+.admin-tabela tr:hover td {
+    background-color: #f5f9fc;
+}
+
+.admin-acoes {
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+}
+
+.admin-acoes form {
+    display: inline;
+}
+
+.admin-btn-editar,
+.admin-btn-excluir {
+    padding: 0.4em 0.8em;
+    border-radius: 5px;
+    font-size: 0.85em;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.admin-btn-editar {
+    background-color: var(--senac-blue);
+    color: #fff;
+}
+
+.admin-btn-editar:hover {
+    background-color: var(--senac-blue-dark);
+}
+
+.admin-btn-excluir {
+    background-color: #c94b4b;
+    color: #fff;
+}
+
+.admin-btn-excluir:hover {
+    background-color: #a53737;
+}
+
+/* ===== Formulário de edição ===== */
+
+.admin-form {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(15, 42, 70, 0.08);
+    padding: 2em;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-form-linha {
+    display: flex;
+    gap: 1.5em;
+    flex-wrap: wrap;
+}
+
+.admin-form-linha > div {
+    flex: 1;
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-form label {
+    font-size: 0.85em;
+    color: var(--senac-blue-dark);
+    margin-top: 0.8em;
+    margin-bottom: 0.3em;
+    font-weight: bold;
+}
+
+.admin-form input,
+.admin-form textarea {
+    padding: 0.5em 0.6em;
+    border: 1px solid #d5dbe1;
+    border-radius: 6px;
+    font-size: 0.95em;
+    font-family: inherit;
+}
+
+.admin-checkbox-linha {
+    justify-content: center;
+}
+
+.admin-checkbox-linha label {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.admin-form-subtitulo {
+    color: var(--senac-blue-dark);
+    margin-top: 1.5em;
+    margin-bottom: 0.2em;
+    border-top: 1px solid #eef1f4;
+    padding-top: 1em;
+}
+
+.admin-form-ajuda {
+    font-size: 0.85em;
+    color: #777;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+.admin-voltar-direita {
+    float: right;
+}
+
+.admin-btn-novo {
+    display: inline-block;
+    margin-bottom: 1em;
+}
+
+.admin-foto-mini {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-foto-mini-vazia {
+    background-color: var(--senac-blue);
+    color: #fff;
+    font-size: 0.75em;
+    font-weight: bold;
+}

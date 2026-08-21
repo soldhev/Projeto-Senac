@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Senac Tech - Onde Estamos</title>
+		<link rel="stylesheet" type="text/css" href="../../static/css/global/reset.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../../static/css/global/variables.css">
+		<link rel="stylesheet" type="text/css" href="../../static/css/global/menu.css">
+		<link rel="stylesheet" type="text/css" href="../../static/css/home/body.css">
+		<link rel="stylesheet" type="text/css" href="../../static/css/localizacao/localizacao.css">
+		<link rel="stylesheet" type="text/css" href="../../static/css/global/footer.css">
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="header-container">
+				<img src="../../static/imagens/logo/logosenac.png" alt="Logo Senac" title="Senac" id="logosenac">
+
+				<input type="checkbox" id="bt_menu">
+				<label for="bt_menu">&#9776;</label>
+
+				<nav id="menu">
+					<ul>
+						<li>
+							<a href="../home/index.html">Início</a>
+						</li>
+						<li class="dropdown">
+							<a href="../cursos/cursos.html">Cursos</a>
+							<ul>
+								<li><a href="../cursos/curso_info.html">Técnico em Informática</a></li>
+								<li><a href="../cursos/curso_redes.html">Técnico em Redes de Computadores</a></li>
+								<li><a href="../cursos/curso_sistemas.html">Técnico em Desenvolvimento de Sistemas</a></li>
+								<li><a href="../cursos/curso_admin.html">Técnico em Administração</a></li>
+								<li><a href="../cursos/curso_jogos.html">Técnico em Prog. de Jogos Digitais</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="localizacao.html">Localização</a>
+						</li>
+					</ul>
+				</nav>
+
+				<div class="header-actions">
+					{% if session.usuario_id %}
+					<a href="../perfil/perfil.html" class="btn btn-entrar">Meu Perfil</a>
+					<a href="../login/logout" class="btn btn-cadastrar">Sair</a>
+					{% else %}
+					<a href="../login/login.html" class="btn btn-entrar">Entrar</a>
+					<a href="../cadastro/cadastro.html" class="btn btn-cadastrar">Cadastrar</a>
+					{% endif %}
+				</div>
+			</div>
+		</header>
+
+		<main>
+			<section class="local-intro">
+				<p class="eyebrow-mono">onde estamos</p>
+				<h1>Venha nos visitar</h1>
+				<p class="local-intro-texto">
+					Nossa unidade fica na Cidade Baixa, em Porto Alegre — de fácil acesso por
+					transporte público e a poucos minutos do centro da cidade.
+				</p>
+			</section>
+
+			<section class="local-conteudo">
+				<div class="local-mapa">
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.7917769435962!2d-51.22108158420672!3d-30.042831038163296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951978567e901f85%3A0x419bba8824e42f95!2sAv.%20Ven%C3%A2ncio%20Aires%2C%2093%20-%20Cidade%20Baixa%2C%20Porto%20Alegre%20-%20RS%2C%2090040-191!5e0!3m2!1spt-BR!2sbr!4v1590938323463!5m2!1spt-BR!2sbr"
+						width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"
+						title="Mapa de localização do Senac Tech - Av. Venâncio Aires, 93, Cidade Baixa, Porto Alegre">
+					</iframe>
+				</div>
+
+				<div class="local-cartoes">
+					<div class="local-cartao">
+						<span class="local-cartao-rotulo">Endereço</span>
+						<p>Av. Venâncio Aires, 93<br>Cidade Baixa, Porto Alegre - RS</p>
+					</div>
+					<div class="local-cartao">
+						<span class="local-cartao-rotulo">Contato</span>
+						<p><a href="tel:+555132887750">(51) 3288-7750</a></p>
+					</div>
+					<a href="https://www.google.com/maps/dir/?api=1&destination=Av.+Ven%C3%A2ncio+Aires,+93,+Cidade+Baixa,+Porto+Alegre+-+RS" target="_blank" rel="noopener noreferrer" class="btn-hero btn-hero-primario local-btn-rota">
+						Traçar rota &rarr;
+					</a>
+				</div>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<div class="footer-container">
+				<div class="footer-brand">
+					<div class="footer-logo">
+						<img src="../../static/imagens/logo/logosenac.png" alt="Logo Senac" title="Senac" id="footerlogosenac">
+					</div>
+					<p class="footer-tagline">
+						Há mais de 70 anos formando profissionais para o mercado de trabalho. O Senac-RS une tradição e inovação para oferecer educação profissional de qualidade em todo o Rio Grande do Sul.
+					</p>
+					<div class="footer-social">
+						<a href="https://www.instagram.com/senacrs/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram do Senac">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+								<rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+								<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+								<line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+							</svg>
+						</a>
+						<a href="https://www.facebook.com/senacrsoficial/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook do Senac">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+							</svg>
+						</a>
+						<a href="https://www.linkedin.com/school/senac-rs/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn do Senac">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+								<rect x="2" y="9" width="4" height="12"></rect>
+								<circle cx="4" cy="4" r="2"></circle>
+							</svg>
+						</a>
+					</div>
+				</div>
+
+				<div class="footer-col">
+					<h3>Cursos</h3>
+					<ul>
+						<li><a href="../cursos/curso_info.html">Informática</a></li>
+						<li><a href="../cursos/curso_redes.html">Redes de Computadores</a></li>
+						<li><a href="../cursos/curso_sistemas.html">Desenvolvimento de Sistemas</a></li>
+						<li><a href="../cursos/curso_admin.html">Administração</a></li>
+						<li><a href="../cursos/curso_jogos.html">Jogos Digitais</a></li>
+					</ul>
+				</div>
+
+				<div class="footer-col">
+					<h3>Institucional</h3>
+					<ul>
+						<li><a href="../home/index.html">Início</a></li>
+						<li><a href="localizacao.html">Localização</a></li>
+						<li><a href="../login/login.html">Entrar</a></li>
+						<li><a href="../cadastro/cadastro.html">Cadastre-se</a></li>
+					</ul>
+				</div>
+
+				<div class="footer-col">
+					<h3>Contato</h3>
+					<ul>
+						<li><a href="tel:+555132887750">(51) 3288-7750</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="footer-bottom">
+				<p>&copy; 2026 Senac. Todos os direitos reservados.</p>
+				<p>Projeto acadêmico desenvolvido para fins de estudo — não é um site oficial do Senac.</p>
+			</div>
+		</footer>
+	</body>
+</html>
