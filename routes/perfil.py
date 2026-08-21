@@ -13,8 +13,6 @@ perfil_bp = Blueprint("perfil", __name__)
 @login_obrigatorio
 def tela_perfil():
     usuario = buscar_usuario_por_id(session["usuario_id"])
-    # request.args.get("sucesso") deixa mostrar uma mensagem depois de
-    # um redirect (ex: "dados", "senha", "foto"), sem precisar reenviar o form
     return render_template(
         "perfil/perfil.html", usuario=usuario, erro=None,
         sucesso=request.args.get("sucesso")
@@ -24,7 +22,6 @@ def tela_perfil():
 @perfil_bp.route("/perfil/editar", methods=["POST"])
 @login_obrigatorio
 def editar_dados():
-    """Atualiza os dados cadastrais do próprio usuário logado."""
     usuario_id = session["usuario_id"]
     usuario_atual = buscar_usuario_por_id(usuario_id)
 
@@ -60,7 +57,6 @@ def editar_dados():
         )
 
     atualizar_perfil(usuario_id, dados)
-    # Se o usuário mudou o nome, a sessão precisa refletir isso
     session["usuario_nome"] = dados["nome"]
 
     return redirect(url_for("perfil.tela_perfil", sucesso="dados"))
@@ -69,7 +65,6 @@ def editar_dados():
 @perfil_bp.route("/perfil/senha", methods=["POST"])
 @login_obrigatorio
 def alterar_minha_senha():
-    """Permite o próprio usuário trocar a senha dele."""
     usuario_id = session["usuario_id"]
     usuario = buscar_usuario_por_id(usuario_id)
 
@@ -96,7 +91,6 @@ def alterar_minha_senha():
 @perfil_bp.route("/perfil/foto", methods=["POST"])
 @login_obrigatorio
 def atualizar_minha_foto():
-    """Permite o próprio usuário trocar a foto de perfil."""
     usuario_id = session["usuario_id"]
     usuario = buscar_usuario_por_id(usuario_id)
 

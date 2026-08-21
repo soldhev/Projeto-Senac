@@ -21,8 +21,6 @@
     font-weight: bold;
 }
 
-/* ===== Tabela de usuários ===== */
-
 .admin-tabela-wrapper {
     overflow-x: auto;
     background-color: #fff;
@@ -89,8 +87,6 @@
 .admin-btn-excluir:hover {
     background-color: #a53737;
 }
-
-/* ===== Formulário de edição ===== */
 
 .admin-form {
     background-color: #fff;

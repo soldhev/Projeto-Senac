@@ -1,32 +1,21 @@
-/* ============================================================
-   SISTEMA DE DESIGN - Senac Tech
-   Arquivo central de cores, tipografia e espaçamentos.
-   Todas as outras folhas de estilo do site usam essas variáveis
-   (var(--nome-da-variavel)) em vez de repetir valores soltos.
-   ============================================================ */
-
 :root {
-    /* ---- Cores de marca (Senac) ---- */
     --senac-blue: #0f3a5c;
     --senac-blue-dark: #0a2c46;
-    --senac-blue-electric: #2e86d6;  /* azul mais vivo, para links e destaques */
+    --senac-blue-electric: #2e86d6;
     --senac-orange: #db7a29;
     --senac-orange-dark: #c0651a;
-    --senac-green: #17a673;          /* "sinal" - usado com moderação (sucesso, tags) */
+    --senac-green: #17a673;
 
-    /* ---- Texto e superfícies ---- */
-    --ink: #0b1d2e;                  /* texto principal */
-    --ink-muted: #52657a;            /* texto secundário */
-    --paper: #f3f6fa;                /* fundo das páginas */
-    --paper-alt: #ffffff;            /* cartões */
-    --line: #e2e8ef;                 /* bordas discretas */
+    --ink: #0b1d2e;
+    --ink-muted: #52657a;
+    --paper: #f3f6fa;
+    --paper-alt: #ffffff;
+    --line: #e2e8ef;
 
-    /* ---- Tipografia ---- */
     --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
     --font-body: 'IBM Plex Sans', Arial, Helvetica, sans-serif;
     --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
 
-    /* ---- Espaçamento e cantos ---- */
     --raio: 12px;
     --raio-pequeno: 8px;
     --sombra: 0 4px 18px rgba(11, 29, 46, 0.08);

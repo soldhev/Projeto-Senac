@@ -8,11 +8,9 @@ cadastro_bp = Blueprint("cadastro", __name__)
 
 @cadastro_bp.route("/cadastro/cadastro.html", methods=["GET", "POST"])
 def tela_cadastro():
-    # GET -> a pessoa só está abrindo a página, mostramos o formulário vazio
     if request.method == "GET":
         return render_template("cadastro/cadastro.html", erro=None)
 
-    # POST -> o formulário foi enviado, vamos ler e validar os campos
     nome = request.form.get("nome", "").strip()
     sobrenome = request.form.get("sobrenome", "").strip()
     endereco = request.form.get("endereco", "").strip()
@@ -36,7 +34,6 @@ def tela_cadastro():
         confirmar_senha
     ]
 
-    # all(...) retorna False se algum item da lista estiver vazio
     if not all(campos_obrigatorios):
         return render_template(
             "cadastro/cadastro.html",
@@ -65,8 +62,6 @@ def tela_cadastro():
 
     novo_usuario_id = criar_usuario(dados)
 
-    # A foto de perfil é opcional - se a pessoa não escolheu nenhuma,
-    # salvar_foto_perfil simplesmente não faz nada.
     arquivo_foto = request.files.get("foto")
     nome_arquivo_salvo = salvar_foto_perfil(
         arquivo_foto, novo_usuario_id, config.PASTA_UPLOADS_PERFIL
@@ -75,5 +70,4 @@ def tela_cadastro():
         from database.models import atualizar_foto_perfil
         atualizar_foto_perfil(novo_usuario_id, nome_arquivo_salvo)
 
-    # Depois de cadastrar, manda a pessoa para o login já com um aviso de sucesso
     return redirect(url_for("login.tela_login", sucesso="1"))

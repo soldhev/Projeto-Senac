@@ -1,6 +1,3 @@
-/* Cores usadas em todo o site (mesmas do menu.css, login.css e admin.css) */
-/* ===== Fundo da página e título ===== */
-
 body {
     background-color: #f5f7f9;
 }
@@ -12,15 +9,12 @@ h2 {
     margin-bottom: 1.5em;
 }
 
-/* A linha <hr> antes do título fica mais discreta */
 hr {
     border: none;
     border-top: 1px solid #e0e5ea;
     margin: 1.5em auto 0 auto;
     width: 90%;
 }
-
-/* ===== Formulário (a tabela em si) ===== */
 
 form {
     display: flex;
@@ -38,7 +32,6 @@ form {
     border-collapse: collapse;
 }
 
-/* Cabeçalho "Todos os Campos São Obrigatórios" */
 #formulário thead td {
     text-align: center;
     padding-bottom: 1em;
@@ -50,16 +43,12 @@ form {
     margin: 0;
 }
 
-/* ===== Cada linha nome/campo ===== */
-
 #formulário tbody tr {
     display: flex;
     flex-direction: column;
     margin-bottom: 0.9em;
 }
 
-/* Os rótulos (Nome, CPF, etc.) usam <h3>, então deixamos com
-   cara de "label" em vez de título grande */
 #formulário tbody h3 {
     font-size: 0.85em;
     font-weight: bold;
@@ -68,14 +57,10 @@ form {
     text-align: left;
 }
 
-/* Os campos ficam ocupando a linha toda, alinhados à esquerda,
-   sobrescrevendo o align="right"/align="left" que vem do HTML */
 #formulário tbody td {
     text-align: left !important;
     width: 100%;
 }
-
-/* ===== Campos de entrada (texto, número, data, select, etc.) ===== */
 
 #formulário input,
 #formulário select,
@@ -101,8 +86,6 @@ form {
 #formulário textarea {
     resize: vertical;
 }
-
-/* ===== Botões (Cadastrar / Limpar) ===== */
 
 #formulário tfoot td {
     text-align: center;
@@ -140,7 +123,6 @@ form {
     background-color: #eef3f7;
 }
 
-/* Pré-visualização da foto escolhida no input file (usada pelo validacao.js) */
 .preview-foto-oculta {
     display: none;
 }
@@ -150,8 +132,6 @@ form {
     margin-top: 0.5em;
     border-radius: 8px;
 }
-
-/* ===== Telas pequenas (celular) ===== */
 
 @media (max-width: 480px) {
     #formulário {

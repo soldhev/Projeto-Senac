@@ -40,8 +40,6 @@
     margin-bottom: 1em;
 }
 
-/* segunda e terceira seção (dados e senha) ocupam a coluna da direita
-   e empilham uma embaixo da outra */
 .perfil-cartao:nth-child(2),
 .perfil-cartao:nth-child(3) {
     grid-column: 2;
@@ -53,8 +51,6 @@
         grid-column: 1;
     }
 }
-
-/* ===== Cartão da foto ===== */
 
 .perfil-cartao-foto {
     grid-row: 1 / 3;
@@ -89,8 +85,6 @@
     font-size: 0.85em;
     margin-bottom: 0.8em;
 }
-
-/* ===== Formulários (dados e senha) ===== */
 
 .perfil-form {
     display: flex;
@@ -150,7 +144,6 @@
     background-color: var(--senac-orange-dark);
 }
 
-/* mensagens de sucesso/erro (mesmo estilo usado no login) */
 .login-mensagem {
     padding: 0.7em 1em;
     border-radius: 6px;

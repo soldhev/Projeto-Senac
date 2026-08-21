@@ -43,7 +43,6 @@ def editar_usuario(usuario_id):
         "email": request.form.get("email", "").strip().lower(),
         "usuario": request.form.get("usuario", "").strip(),
         "observacao": request.form.get("observacao", "").strip(),
-        # Checkbox só manda o valor "on" quando está marcado
         "admin": 1 if request.form.get("admin") == "on" else 0,
     }
 
@@ -63,7 +62,6 @@ def editar_usuario(usuario_id):
 
     atualizar_usuario(usuario_id, dados)
 
-    # Redefinir senha é opcional: só troca se o admin preencheu os campos.
     nova_senha = request.form.get("nova_senha", "")
     confirmar_nova_senha = request.form.get("confirmar_nova_senha", "")
     if nova_senha or confirmar_nova_senha:
@@ -81,8 +79,6 @@ def editar_usuario(usuario_id):
 @admin_bp.route("/admin/novo_usuario.html", methods=["GET", "POST"])
 @admin_obrigatorio
 def novo_usuario():
-    """O admin cadastra um usuário novo direto pelo painel (sem passar
-    pela tela pública de cadastro)."""
     if request.method == "GET":
         return render_template("admin/novo_usuario.html", erro=None)
 
@@ -138,8 +134,6 @@ def novo_usuario():
 
     novo_id = criar_usuario(dados)
 
-    # O campo "admin" não existe em criar_usuario (o cadastro público
-    # nunca pode criar admin), então atualizamos separadamente aqui.
     if eh_admin:
         usuario_criado = buscar_usuario_por_id(novo_id)
         dados_completos = dict(usuario_criado)

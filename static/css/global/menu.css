@@ -2,8 +2,6 @@
     text-decoration: none;
 }
 
-/* ===== Header base ===== */
-
 .site-header {
     background-color: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(8px);
@@ -14,7 +12,6 @@
     z-index: 100;
 }
 
-/* Fina linha de acento no topo do header - assinatura visual sutil */
 .site-header::before {
     content: "";
     display: block;
@@ -38,8 +35,6 @@
     height: 46px;
     width: auto;
 }
-
-/* ===== Navegação central ===== */
 
 #menu {
     font-family: var(--font-body);
@@ -85,8 +80,6 @@
     vertical-align: middle;
 }
 
-/* ===== Dropdown "Cursos" ===== */
-
 #menu ul ul {
     position: absolute;
     top: calc(100% + 12px);
@@ -131,8 +124,6 @@
     color: var(--senac-blue);
 }
 
-/* ===== Botões de ação (Entrar / Cadastrar) ===== */
-
 .header-actions {
     justify-self: end;
     display: flex;
@@ -174,8 +165,6 @@
     border-color: var(--senac-orange-dark);
 }
 
-/* ===== Botão do menu mobile ===== */
-
 #bt_menu {
     display: none;
 }
@@ -192,8 +181,6 @@ label[for="bt_menu"] {
     margin-left: auto;
     order: 2;
 }
-
-/* ===== Responsivo ===== */
 
 @media (max-width: 900px) {
     .header-container {

@@ -8,7 +8,6 @@ login_bp = Blueprint("login", __name__)
 @login_bp.route("/login/login.html", methods=["GET", "POST"])
 def tela_login():
     if request.method == "GET":
-        # Se a pessoa acabou de se cadastrar, mostramos uma mensagem de sucesso
         veio_do_cadastro = request.args.get("sucesso") == "1"
         return render_template("login/login.html", erro=None, sucesso=veio_do_cadastro)
 
@@ -17,8 +16,6 @@ def tela_login():
 
     usuario = buscar_usuario_por_email_ou_usuario(login_digitado)
 
-    # Se não achou o usuário OU a senha não confere, mostra erro genérico
-    # (não dizemos qual dos dois está errado, por segurança)
     if usuario is None or not senha_esta_correta(senha_digitada, usuario["senha"]):
         return render_template(
             "login/login.html",
@@ -26,7 +23,6 @@ def tela_login():
             sucesso=False
         )
 
-    # Login certo: guarda os dados básicos na sessão do navegador
     session["usuario_id"] = usuario["id"]
     session["usuario_nome"] = usuario["nome"]
     session["admin"] = bool(usuario["admin"])

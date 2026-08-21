@@ -1,9 +1,3 @@
-/* ============================================================
-   HOME - Senac Tech
-   ============================================================ */
-
-/* ===== Hero ===== */
-
 .hero {
     background-color: var(--senac-blue-dark);
     background-image:
@@ -14,7 +8,6 @@
     padding: 64px 24px 88px;
 }
 
-/* Textura sutil de "placa de circuito" atrás do hero */
 .hero::before {
     content: "";
     position: absolute;
@@ -95,8 +88,6 @@
     transform: translateY(-2px);
 }
 
-/* ---- "Painel de terminal" decorativo (assinatura visual do hero) ---- */
-
 .hero-painel {
     background-color: #0a1622;
     border-radius: var(--raio);
@@ -157,8 +148,6 @@
     50% { opacity: 0; }
 }
 
-/* ===== Faixa de estatísticas ===== */
-
 .faixa-stats {
     background-color: var(--paper-alt);
     border-bottom: 1px solid var(--line);
@@ -196,8 +185,6 @@
     font-size: 13px;
     color: var(--ink-muted);
 }
-
-/* ===== Seção "Sobre" ===== */
 
 .sobre,
 .vitrine-cursos {
@@ -274,8 +261,6 @@
     aspect-ratio: 4 / 3;
 }
 
-/* ===== Vitrine de cursos ===== */
-
 .vitrine-grade {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
@@ -325,8 +310,6 @@
     line-height: 1.3;
 }
 
-/* ===== CTA final ===== */
-
 .cta-final {
     background-color: var(--senac-blue);
     background-image: linear-gradient(120deg, var(--senac-blue) 0%, var(--senac-blue-dark) 100%);
@@ -344,8 +327,6 @@
     color: #c3d6e6;
     margin-bottom: 28px;
 }
-
-/* ===== Responsivo ===== */
 
 @media (max-width: 860px) {
     .hero-grade {

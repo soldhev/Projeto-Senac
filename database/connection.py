@@ -3,25 +3,12 @@ import config
 
 
 def obter_conexao():
-    """
-    Abre uma conexão com o banco de dados SQLite.
-
-    O row_factory faz com que cada linha retornada pelo banco
-    funcione como um dicionário (ex: usuario["nome"]), em vez de
-    uma tupla sem nome (ex: usuario[0]) — fica bem mais fácil de ler.
-    """
     conexao = sqlite3.connect(config.CAMINHO_BANCO)
     conexao.row_factory = sqlite3.Row
     return conexao
 
 
 def criar_tabelas():
-    """
-    Cria a tabela "usuarios" caso ela ainda não exista, e garante
-    que sempre exista pelo menos um usuário administrador.
-
-    Essa função é chamada uma única vez, quando o app.py inicia.
-    """
     conexao = obter_conexao()
     cursor = conexao.cursor()
 
@@ -50,21 +37,16 @@ def criar_tabelas():
     """)
     conexao.commit()
 
-    # Migração simples: se o banco já existia de uma versão anterior
-    # (sem a coluna foto_perfil), adiciona a coluna agora.
     cursor.execute("PRAGMA table_info(usuarios)")
     colunas_existentes = [linha["name"] for linha in cursor.fetchall()]
     if "foto_perfil" not in colunas_existentes:
         cursor.execute("ALTER TABLE usuarios ADD COLUMN foto_perfil TEXT")
         conexao.commit()
 
-    # Verifica se já existe algum administrador cadastrado
     cursor.execute("SELECT id FROM usuarios WHERE admin = 1")
     ja_existe_admin = cursor.fetchone()
 
     if not ja_existe_admin:
-        # Import feito aqui dentro (e não lá em cima) só para evitar
-        # um problema de "import circular" entre este arquivo e o helpers.py
         from utils.helpers import gerar_hash_senha
 
         cursor.execute("""

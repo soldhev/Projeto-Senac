@@ -1,7 +1,3 @@
-/* ============================================================
-   LISTAGEM DE CURSOS - Senac Tech
-   ============================================================ */
-
 .cursos-intro {
     max-width: 720px;
     margin: 0 auto;
@@ -18,8 +14,6 @@
     color: var(--ink-muted);
 }
 
-/* ===== Trilha (lista de cursos com "conector" entre os cards) ===== */
-
 .trilha-cursos {
     max-width: 900px;
     margin: 0 auto;
@@ -31,7 +25,6 @@
     position: relative;
 }
 
-/* A linha vertical que "conecta" os cursos, como uma trilha de rede */
 .trilha-lista::before {
     content: "";
     position: absolute;
@@ -128,8 +121,6 @@
     font-weight: 600;
     color: var(--senac-blue-electric);
 }
-
-/* ===== Responsivo ===== */
 
 @media (max-width: 620px) {
     .trilha-lista::before {
